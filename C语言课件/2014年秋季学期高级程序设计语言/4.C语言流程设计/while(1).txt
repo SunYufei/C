@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int i;
+	printf("please input the value!");
+	scanf("%d",&i);
+	while(1){
+		if(i==0)
+			break;
+		printf("i=%d\n",i);
+		printf("please input the value!");
+		scanf("%d",&i);
+	}
+	return 0;
+}

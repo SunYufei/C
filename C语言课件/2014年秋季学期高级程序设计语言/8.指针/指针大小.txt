@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+	int *p;
+	double *q;
+	char *c;
+	printf("%d,%d,%d",sizeof(p),sizeof(q),sizeof(c));
+	return 0;
+}

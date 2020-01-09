@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+FILE *fp;
+int i,j;
+printf("please input value of i!");
+scanf("%d",&i);
+if((fp=fopen("a.txt","wb+"))==NULL){
+printf("Cannot open file !");
+exit(EXIT_FAILURE);
+}
+fprintf(fp,"%d",i);
+rewind(fp);//这个时候提醒大家
+fscanf(fp,"%d",&j);
+printf("j=%d",j);
+fclose(fp);
+return 0;
+}

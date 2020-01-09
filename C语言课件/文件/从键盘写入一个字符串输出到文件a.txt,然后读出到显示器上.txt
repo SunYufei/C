@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+FILE *fp;
+char ch,str[20];
+if((fp=fopen("a.txt","w+"))==NULL){
+printf("Cannot open file !");
+exit(EXIT_FAILURE);
+}
+printf("input a string:\n");
+gets(str);
+fputs(str,fp);
+rewind(fp);
+ch=fgetc(fp);//解释一下为什么不用fgets(),因为不知道到底输入了多少个字符
+while(ch!=EOF){
+putchar(ch);
+ch=fgetc(fp);
+}
+printf("\n");
+fclose(fp);
+return 0;
+}

@@ -1,0 +1,35 @@
+1. 定义学生类和成绩类。
+2. 定义管理员类、工作人员类，然后编写一个登录界面，
+在这个界面中可选择以管理员登录或选择以工作人员登录，
+登录后才能进行各项操作。
+3. 定义学生管理类，该类中主要包括【排序函数】、【比较函数】、
+【成绩录入函数】，
+4. 再加入学生【信息显示函数】、【查找函数】、【删除函数】及【修改函数】。
+这三个新增加的函数要完成如下功能：
+1） 学生信息显示函数：显示每个学生的所有信息
+2） 查找函数：可分别按学号、姓名、班级查询学生，并显示信息
+3） 删除函数：按学号或姓名删除某一学生。
+4） 修改函数：对某一学生的信息进行修改。
+
+/*
+学生类：包含成绩类student *ID, string Name, string Class;	
+set(name,class);	show();
+成绩类：int score;			
+set(score);		show();
+*/
+/*
+账户类：string username, string password;	
+check(username,password);	set(username,password);
+管理员类、工作人员类继承账户类。
+*/
+
+学生管理类：
+motify(id);
+compare(id1,id2);
+sort(mode);
+
+add();
+showall();
+search(key,mode);
+del(id);
+setscore(id)

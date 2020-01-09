@@ -1,0 +1,33 @@
+#include<stdio.h>
+#define LEN_A 7
+#define LEN_B 5
+void input_array(int a[],int n);
+double get_average(int a[],int n);
+int main()
+{
+	
+	double average_a,average_b;
+	int a[LEN_A],b[LEN_B];
+	input_array(a,LEN_A);
+	input_array(b,LEN_B);
+	average_a=get_average(a,LEN_A);
+	average_b=get_average(b,LEN_B);
+	printf("the average of a and b is:%lf and %lf respectively!",average_a,average_b);
+	return 0;
+}
+void input_array(int a[],int n)
+{
+	int i;
+	printf("\nplease input the value of this array!");
+	for(i=0;i<n;i++)
+		scanf("%d",&a[i]);
+
+}
+double get_average(int a[],int n)
+{
+	double sum=0;
+	int i;
+	for(i=0;i<n;i++)
+		sum+=a[i];
+	return sum/(1.0*n);
+}

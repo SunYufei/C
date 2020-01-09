@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define LENGTH 2
+typedef struct
+{
+char name[100];
+int num;
+int age;
+char addr[100];
+}Student;
+Student s[LENGTH],d[LENGTH],*ps,*pd;
+int  main()
+{
+FILE *fp;
+int i;
+ps=s;
+pd=d;
+if((fp=fopen("a.txt","wb+"))==NULL){
+printf("Cannot open file !");
+exit(EXIT_FAILURE);
+}
+for(i=0;i<LENGTH;i++,ps++){
+	printf("please input the data of student %d\n",i+1);
+	printf("please input name");
+	gets(ps->name);
+	printf("please input num!");
+	scanf("%d",&ps->num);
+	printf("please input age!");
+	scanf("%d",&ps->age);
+	printf("please input address!");
+	getchar();//解释一下 c现代方法 p204
+	gets(ps->addr);
+	
+}
+ps=s;
+fwrite(ps,sizeof(Student),LENGTH,fp);
+rewind(fp);
+fread(pd,sizeof(Student),LENGTH,fp);
+for(i=0;i<LENGTH;i++,pd++){
+	printf("\nthe %dth student is as follows!",i+1);
+	printf("\n name:%s,num:%d,age:%d,address:%s",pd->name,pd->num,pd->age,pd->addr);
+}
+fclose(fp);
+return 0;
+}
